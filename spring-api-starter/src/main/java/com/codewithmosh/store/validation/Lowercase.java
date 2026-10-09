@@ -8,6 +8,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 import jakarta.validation.Constraint;
+import jakarta.validation.Payload;
 
 @Documented
 @Inherited
@@ -17,5 +18,5 @@ import jakarta.validation.Constraint;
 public @interface Lowercase {
     String message() default "must be lowercase";
     Class<?>[] groups() default {};
-    Class<?>[] payload() default {};
+    Class<? extends Payload>[] payload() default {};
 }
